@@ -1,0 +1,111 @@
+﻿@model MemberPortal.Models.ChangePasswordViewModel
+@{
+    ViewBag.Title = "Update Account";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="page-wrapper">
+
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
+                <h5 class="font-medium text-uppercase mb-0">Change Password</h5>
+            </div>
+            <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
+                <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
+                    <ol class="breadcrumb mb-0 justify-content-end p-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Change Password</h4>
+                                                
+                        @using (Html.BeginForm("UpdateAccount", "Profile", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                        @Html.AntiForgeryToken()
+
+                        <small class="form-text text-dark"><i>@Html.ValidationSummary("", new { @class = "text-danger" })</i></small>
+                        
+                        <form class="form-horizontal pt-3">
+                            <div class="form-group row">
+                                <label for="username" class="col-sm-3 control-label">Email Address Login</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <i>@Session["EmailAdd"] </i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">Current Password*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
+                                        @Html.PasswordFor(m => m.OldPassword, new { @class = "form-control", @placeholder = "Current password", autocomplete = "off" })
+                                        @*<small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.OldPassword, "", new { @class = "text-danger" })</i></small>*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">New Password*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
+                                        @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", @placeholder = "New password", autocomplete = "off" })
+                                        @*<small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.NewPassword, "", new { @class = "text-danger" })</i></small>*@
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label">Confirm New Password*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Re Enter password" , autocomplete = "off" })
+                                        @*<small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })</i></small>*@
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <hr />
+                            <div class="form-group">
+                                <label class="text-danger"><b>Reminders</b></label>
+                                <ul>
+                                    <li><small class="form-text text-dark"><i>Password should be 8 to 12 non-blank alphanumeric characters.</i></small></li>
+                                    <li><small class="form-text text-dark"><i>Password are case sensative.</i></small></li>
+                                    <li><small class="form-text text-dark"><i>Your new password cannot be the same as your old password.</i></small></li>
+                                    <li><small class="form-text text-dark"><i>Your new password cannot be your first or last name.</i></small></li>
+                                </ul>
+                            </div>
+
+                            <hr/>
+                            <div class="form-group row mb-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Change Password</button> | <button type="submit" class="btn btn-info waves-effect waves-light">Cancel</button>
+                                    @*<input type="submit" value="Change Password" class="btn btn-info waves-effect waves-light" /> | <a class="btn btn-info waves-effect waves-light" href="@Url.Action("Index", "Home")"> Cancel </a>*@
+                                </div>
+                            </div>
+                        </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

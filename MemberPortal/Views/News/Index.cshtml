@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "News & Events";
+}
+
+
+<link href="~/Css/custom.css" rel="stylesheet" />
+
+<div class="banner-area banner-bg-3 ptb-80 bg-opacity-black-50 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner">
+                    <h2>News & Events</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-content-wrapper">
+    <!-- Start Latest Blog Area -->
+    <div id="blog" class="content-section-area ptb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                    <div class="main-heading-content text-center">
+                        <h2>Latest <span>Article</span></h2>
+                        <p>Get the latest headline News, Events and Promos around  your cooperatives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row blog-wrapper-2">
+                <div class="col-md-4 col-sm-6">
+                    <article class="blog-post no-box-shadow">
+                        <div class="post-thumbnail">
+                            <a href="@Url.Action("New3", "News")">
+                                <img class="img-responsive" src="~/Img/news/assembly.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-content-inner">
+                                <h3>NEC General Assembly 2019</h3>
+                                <p>Congratulations to all the winners last General Assembly held at Daet, Camarines Norte.</p>
+                                <a href="@Url.Action("New3", "News")" class="readmore">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <article class="blog-post no-box-shadow">
+                        <div class="post-thumbnail">
+                            <a href="@Url.Action("New2", "News")">
+                                <img class="img-responsive" src="~/Img/news/GA_Poster.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-content-inner">
+                                <h3>NATCCO GA on April 26-28 in Iloilo City.</h3>
+                                <p>Representatives of member cooperatives of the NATCCO Network will converge in Iloilo City on April 26-28 for the 17th Coop Leaders Congress and the 42nd General Assembly.  Venue is the Grand Xing Imperial Hotel.</p>
+                                <br />
+                                <a href="@Url.Action("New2", "News")" class="readmore">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-4 col-sm-6 hidden-sm">
+                    <article class="blog-post no-box-shadow">
+                        <div class="post-thumbnail">
+                            <a href="@Url.Action("News1", "News")">
+                                <img class="img-responsive" src="~/Img/news/partylist.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-content-inner">
+                                <h3>COOP-NATCCO Partylist guns for 3 seats.</h3>
+                                <p>All cooperative members, leaders, staff, management and stakeholders are reminded to support COOP-NATCCO Partylist (CNPL) in the upcoming 2019 Elections. Support is through – voting, campaigning, or providing finances and logistics.</p>
+                                <a href="@Url.Action("News1", "News")" class="readmore">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

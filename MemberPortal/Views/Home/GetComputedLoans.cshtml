@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MemberPortal.Models.usp_CreateAmortization_Result1>
+
+    <table id="LoanActive" class="table table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th style="text-align:center" class="productth">Date</th>
+                <th style="text-align:center" class="productth">Principal</th>
+                <th style="text-align:center" class="productth">Interest</th>
+                <th style="text-align:center" class="productth">Total</th>
+                <th style="text-align:center" class="productth">Balances</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:center">@item.DateDue.Value.ToShortDateString()</td>
+                    <td style="text-align:right">@item.Principal.Value.ToString("N2")</td>
+                    <td style="text-align:right">@item.interest.Value.ToString("N2")</td>
+                    <td style="text-align:right">@item.total.Value.ToString("N2")</td>
+                    <td style="text-align:right">@item.Balances.Value.ToString("N2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+

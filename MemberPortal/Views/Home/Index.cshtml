@@ -1,0 +1,265 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Active = "Home";
+}
+
+<link href="~/Css/custom.css" rel="stylesheet" />
+<link href="~/Css/carousel.css" rel="stylesheet" />
+<link href="~/Css/Header.css" rel="stylesheet" />
+
+<!-- Start Slider Area -->
+<div id="home" class="homepage-three-slider">
+    <div class="main-wrapper-two">
+       <div class="slider-wrapper owl-carousel">
+            
+            <div class="slider-item home-three-slider-item slider-item-four slider-bg-nine">
+                <div class="container">
+                    <div class="row">
+                        <div class="slider-content-area">
+                            <div class="slide-text">
+                                <h1 class="homepage-three-title">NEC MPC <br /><span>Brigada Eskwela 2019 </span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+
+            <div class="slider-item home-three-slider-item slider-item-four slider-bg-23">
+                <div class="container">
+                    <div class="row">
+                        <div class="slider-content-area">
+                            <div class="slide-text">
+                                <h1 class="homepage-three-title"><br /> <span>Online</span> Membership </h1>
+                                <h2>Be a member. Sign up now.</h2>
+                                <div class="slider-content-btn">
+                                    <a class="button button-transparent slide-right" href="@Url.Action("Login", "MemberAccount")">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-item home-three-slider-item slider-item-four slider-bg-Ten">
+                <div class="container">
+                    <div class="row">
+                        <div class="slider-content-area">
+                            <div class="slide-text">
+                                <h1 class="homepage-three-title"><span>Brgy Kaunlaran </span><br />Members</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           <div class="slider-item home-three-slider-item slider-item-four slider-bg-11">
+               <div class="container">
+                   <div class="row">
+                       <div class="slider-content-area">
+                           <div class="slide-text">
+                               <h1 class="homepage-three-title"><span>Thank You</span>NEC MPC.<br />For your trust to <span>CLIMBS</span> </h1>
+                               @*<h2>Coop Natcco Party List is # <span>142</span> in the voter's ballot.</h2>*@
+                               @*<div class="slider-content-btn">
+                                   <a class="button button-color active " href="@Url.Action("News1", "News")">Read More</a>
+                               </div>*@
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+
+            @*<div class="slider-item home-three-slider-item slider-item-four slider-bg-five">
+                <div class="container">
+                    <div class="row">
+                        <div class="slider-content-area">
+                            <div class="slide-text">
+                                <h1 class="homepage-three-title"><span>COOP-NATCCO</span> Partylist Guns <br />For <span>3</span> Seats </h1>
+                                <h2>Coop Natcco Party List is # <span>142</span> in the voter's ballot.</h2>
+                                <div class="slider-content-btn">
+                                    <a class="button button-color active " href="@Url.Action("News1", "News")">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+           
+         </div>
+    </div>
+</div>
+<!-- End Slider Area -->
+
+<!-- Start Main Content Wrapper -->
+<div class="main-content-wrapper">
+    <div id="about" class="content-section-area ptb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                    <div class="main-heading-content text-center">
+                        <h2>Product <span>& Services</span> </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <a href="@Url.Action("LoanProduct", "Service")"><span><img src="~/Img/loan/BL.png" height="130" width="180" /></span></a>
+                        </div>
+                        <div class="about-text">
+                            <h3>Loans</h3>
+                            <p>Get to your goals faster. Turn your dreams into reality through our different kinds of loan product. </p>
+                        </div>
+                    </div>
+ 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <a href="@Url.Action("SavingsProduct", "Service")"><span><img src="~/Img/product/kiddie.jpg" height="130" width="180" /></span></a>
+                        </div>
+                        <div class="about-text">
+                            <h3>Savings</h3>
+                            <p>Our savings account products provide convenience in savings, managing, monitoring finances and growing your funds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <a href="@Url.Action("Damayan", "Service")"><img src="~/Img/main/damayan.jpg" height="130" width="180" /></a>
+                        </div>
+                        <div class="about-text">
+                            <h3>DAMAYAN</h3>
+                            <p>Secure your savings, avoid taking a risk and get secured. Avail our insurance now. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <span><img src="~/Img/main/kaya.jpg" height="130" width="180" /></span>
+                            </div>
+                        <div class="about-text">
+                            <h3>K A Y A</h3>
+                            <p>Aims to improve efficiency of coops in expanding their market and delivering financial services to their members by making online payment channels </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Content Wrapper -->
+
+
+<!-- Start Call to action Section -->
+<div class="call-to-action-section banner-bg-5 bg-opacity-black-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <div class="action-content">
+                    <span>Loan Calculator</span>
+                    <h3>Compute for a loan package that <span class="action-title">suit your budget.</span></h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="action-btn">
+                    <a href="@Url.Action("LoanCalc", "Home")" class="button button-black">Calculate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Latest Blog Area -->
+<div id="blog" class="content-section-area ptb-80 gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                <div class="main-heading-content text-center">
+                    <h2>Latest <span>News</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row blog-wrapper-2">
+            <div class="col-md-4 col-sm-6">
+                <article class="blog-post no-box-shadow">
+                    <div class="post-thumbnail">
+                        <a href="@Url.Action("New3", "News")">
+                            <img class="img-responsive" src="~/Img/news/assembly.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-inner">
+                            <h3>NEC General Assembly 2019</h3>
+                            <p>Congratulations to all the winners last General Assembly held at Daet, Camarines Norte.</p>
+                            <a href="@Url.Action("New3", "News")" class="readmore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <article class="blog-post no-box-shadow">
+                    <div class="post-thumbnail">
+                        <a href="@Url.Action("New2", "News")">
+                            <img class="img-responsive" src="~/Img/news/GA_Poster.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-inner">
+                            <h3>NATCCO GA on April 26-28 in Iloilo City.</h3>
+                            <p>Representatives of member cooperatives of the NATCCO Network will converge in Iloilo City on April 26-28 for the 17th Coop Leaders Congress and the 42nd General Assembly.  Venue is the Grand Xing Imperial Hotel.</p>
+                            <br />
+                            <a href="@Url.Action("New2", "News")" class="readmore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-sm-6 hidden-sm">
+                <article class="blog-post no-box-shadow">
+                    <div class="post-thumbnail">
+                        <a href="@Url.Action("News1", "News")">
+                            <img class="img-responsive" src="~/Img/news/partylist.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-content-inner">
+                            <h3>COOP-NATCCO Partylist guns for 3 seats.</h3>
+                            <p>All cooperative members, leaders, staff, management and stakeholders are reminded to support COOP-NATCCO Partylist (CNPL) in the upcoming 2019 Elections. Support is through – voting, campaigning, or providing finances and logistics.</p>
+                            <a href="@Url.Action("News1", "News")" class="readmore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Latest Blog Area -->
+
+<div class="content-section-area-about bg-12" data-stellar-background-ratio="0.5">
+    <div class="row margin-left-about">
+        <div class="about-left-hanf">
+            <div class="box bg-cello section-relative">
+                <h3 style="color:darkorange">About Us</h3>
+                <p class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;"><b>NEC Multi-Purpose Cooperative </b> 
+                    is one of the Cooperatives in thr country having more than 300 million in Assets.We are operating since 1993, started as closed type Coop from NATCCO for its employees and became community type last 2006 with five(5) branches, three(3) in Metro Manila such as in Cubao, Batasan ang Taguig branches, one (1) in San Pedro, Laguna and one (1) in Daet, Camarines Nortes. We have almost seven thousand (14,000.00) members and an active member of NATCCO Federation.
+                </p>
+                <p class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                    True with its mission of providing financial products and related services to empower member's socio economic well being, we offer various services suitable to our client's needs. Among others is the salary lending window offered to employees of private and government entities.
+                </p>
+                <div class="about-btn">
+                        <a class="button active" href="@Url.Action("About", "Home")">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Contact Us-->
+@Html.Partial("_ContactFooter")

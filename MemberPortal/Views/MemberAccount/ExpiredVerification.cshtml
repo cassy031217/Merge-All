@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "ExpiredVerification";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <br />
+        <h2 class="text-center">Verification Error</h2>
+        <hr />
+        <div style="background: #fff;">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <b>Dear Sir/Madam,</b>
+                            <br /><br />
+                            <p>This is to inform you that your Account Registration is <b class="text-danger">EXPIRED</b>. Verification of account thru email is within 24 hrs after registration. </p>
+                            <p class="text-danger"><b>Please Register Again. </b></p>
+                            <p><b>- Thank You (NEC MPC)</b></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="form-group mb-0 mt-2 ">
+            <div class="col-sm-12 text-center ">
+                <a class="btn btn-info" href="@Url.Action("Login", "MemberAccount")">Login</a>
+                | <a href="@Url.Action("Index", "Home")" class="btn btn-success"><b>Exit</b></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

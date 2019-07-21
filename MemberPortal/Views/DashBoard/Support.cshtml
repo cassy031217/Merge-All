@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Support";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<div class="page-wrapper">
+
+    <div class="page-breadcrumb bg-light">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
+                <h5 class="font-medium text-uppercase mb-0">Help & Support</h5>
+            </div>
+            <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
+                <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
+                    <ol class="breadcrumb mb-0 justify-content-end p-0 bg-light">
+                        <li class="breadcrumb-item">Home</li>
+                        <li class="breadcrumb-item active" aria-current="page">Help & Support</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content container-fluid">
+
+
+        <div class="card" id="intro">
+            <div class="card-body">
+                <h3>Get In Touch</h3>
+                <hr>
+                <p>
+                    Reach out to us and we're happy to answer any questions and we'll respond as soon as we can.
+                </p>
+                <br />
+
+                <div class="card-group">
+                    <div class="card p-2 p-lg-3">
+                        <div class="p-lg-3 p-2">
+                            <div class="d-flex align-items-center">
+                                <h2 class="mb-0 text-info display-7">
+                                    <i class="ti-location-pin"></i>
+                                </h2>
+                                <div class="ml-4" style="width: 38%;">
+                                    <h4 class="font-medium">Cubao Branch</h4>
+                                    Unit A & B Baron Bldg, 241 P. Tuazon St. Cubao, Quezon City
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-2 p-lg-3">
+                        <div class="p-lg-3 p-2">
+                            <div class="d-flex align-items-center">
+                                <h2 class="mb-0 text-info display-7">
+                                    <i class="ti-email"></i>
+                                </h2>
+                                <div class="ml-4" style="width: 38%;">
+                                    <h4 class="font-medium">Email Us</h4>
+                                    nec_mpc@yahoo.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-2 p-lg-3">
+                        <div class="p-lg-3 p-2">
+                            <div class="d-flex align-items-center">
+                                <h2 class="mb-0 text-info display-7">
+                                    <i class="ti-headphone-alt"></i>
+                                </h2>
+                                <div class="ml-4" style="width: 38%;">
+                                    <h4 class="font-medium">Call Us</h4>
+                                    (02) 709-31-37
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                    <div class="footer-widget-item">
+                        @*<img src="/Img/about/branch/Cubao.png" width="90%" height="280" frameborder="0" style="border:0"></img>*@
+                        <iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=nec%20mpc%20cubao+(NEC%20MPC)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" width="90%" height="280" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                <br />
+                <small class="d-block text-center mt-3">
+                    <a href="@Url.Action("Index", "DashBoard")"><b>Home</b></a>
+                </small>
+            </div>
+        </div>
+       
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

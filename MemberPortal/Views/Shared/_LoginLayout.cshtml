@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>NEC MPC </title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Img/bg/banner/NEC Logo.png">
+    <link href="~/Content/Dashboard/style.min.css" rel="stylesheet" />
+    <link href="~/Content/style.min.css" rel="stylesheet" />
+    <link href="~/Css/Login.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url('../../Img/bg/banner/bg-03-1.jpg') no-repeat center center;">
+            <div class="auth-box on-sidebar">
+                <div id="loginform">
+                    <div class="logo">
+                        <span class="db">
+                            <img src="~/assets/images/logos/logo-icon.png"  alt="logo"/>
+                        </span>
+                        <h5 class="font-medium mb-3">Sign In</h5>
+                    </div>
+                    @RenderBody()
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <script src="~/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".preloader").fadeOut();
+    //// ==============================================================
+    //// Login and Recover Password
+    //// ==============================================================
+    $('#to-recover').on("click", function() {
+        $("#loginform").slideUp();
+        $("#recoverform").fadeIn();
+    });
+
+    $('#to-login').on("click", function () {
+        $("#recoverform").slideUp();
+        $("#loginform").fadeIn();
+    });
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

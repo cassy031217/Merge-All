@@ -1,0 +1,129 @@
+﻿@model IEnumerable<MemberPortal.Models.usp_CreateAmortization_Result1>
+@{
+    ViewBag.Title = "Loan Calculator";
+}
+
+
+<link href="/Css/custom.css" rel="stylesheet" />
+<link href="/Css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="banner-area banner-bg-3 ptb-80 bg-opacity-black-50 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner">
+                    <h2>Loan Calculator</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section-area ptb-80 white-bg bg-wabe1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="calculate-left">
+                    <h2><span class="icon fl-puppets-maths27"></span> Compute loan package</h2>
+                    <div class="calculate-wrappwr">
+                        <div class="section-one">
+                            <levels>Choose Loan Type</levels>
+                            <select class="option-area" name="cars">
+                                <option value="1">Personal Loan</option>
+                                <option value="2">Salary Loan</option>
+                                <option value="3">Prov. Diminishing- Car Loan</option>
+                                <option value="4">Micro Loan</option>
+                                <option value="5">Educational Loan</option>
+                            </select>
+                        </div>
+                        <div class="section-one">
+                            <levels>Loan Terms</levels>
+                            <select class="option-area" name="cars">
+                                <option value="6">6 months</option>
+                                <option value="12">12 months</option>
+                                <option value="18">18 months</option>
+                                <option value="24">24 months</option>
+                                <option value="30">30 months</option>
+                                <option value="36">36 months</option>
+                                <option value="48">48 months</option>
+                                <option value="60">60 months</option>
+                            </select>
+                        </div>
+                        <div class="section-one">
+                            <levels>Amount</levels>
+                            <input class="loginbox-form" type="text" placeholder="" name="amount">
+                        </div>
+                        <div class="section-one">
+                            @*<input id="btnCalculate" name="btnCalculate" type="button" value="Compute Loan" class="btn btn-warning" />*@
+                            <a class="button active login-button mt-10 " href="@Url.Action("GetLoanCalc", "home")">&nbsp;&nbsp; Compute Loan &nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="calculate-right">
+                    <img src="/Img/client/calcu.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 order-md-3">
+            <div class="form-group">
+                <label for="state" class="text-danger"><b>Important Notice</b></label>
+                <ul class="widget-link">
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>All amount quoted are in Philippine Peso.</b></li>
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>The computation only serve as guide and illustration purposes only.</b></li>
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>Contact your Coop for your actual loan computation.</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-area ptb-10 white-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-sm-10" id="products">
+                            
+
+                    <table id="LoanActive" class="table table-sm table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center" class="productth">Date</th>
+                                <th style="text-align:center" class="productth">Principal</th>
+                                <th style="text-align:center" class="productth">Interest</th>
+                                <th style="text-align:center" class="productth">Total</th>
+                                <th style="text-align:center" class="productth">Balances</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td style="text-align:center">@item.DateDue.Value.ToShortDateString()</td>
+                                    <td style="text-align:right">@item.Principal.Value.ToString("N2")</td>
+                                    <td style="text-align:right">@item.interest.Value.ToString("N2")</td>
+                                    <td style="text-align:right">@item.total.Value.ToString("N2")</td>
+                                    <td style="text-align:right">@item.Balances.Value.ToString("N2")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

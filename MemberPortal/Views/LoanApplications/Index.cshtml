@@ -1,0 +1,113 @@
+﻿@model IEnumerable<MemberPortal.Models.LoanApplication>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<link href="~/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+<link href="~/Content/style1.min.css" rel="stylesheet" />
+
+<div class="page-wrapper">
+
+    @*<div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
+                <h5 class="font-medium text-uppercase mb-0">Loan Application Status</h5>
+            </div>
+            <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
+                <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
+                    <ol class="breadcrumb mb-0 justify-content-end p-0">
+                        <li class="breadcrumb-item">Home</li>
+                        <li class="breadcrumb-item active" aria-current="page">Loan Application Status</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>*@
+
+
+
+    <div class="page-content container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="material-card card">
+                    <div class="card-body">
+                        <h4 class="card-title">Loan Application List</h4>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped border">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Member Code
+                                        </th>
+                                        <th>
+                                            Amount
+                                        </th>
+                                        <th>
+                                            Date
+                                        </th>
+                                        <th>
+                                            Product
+                                        </th>
+                                        <th>
+                                            TermsQty
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   
+                                    @foreach (var item in Model)
+                                    {
+                                        
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.MemberCode)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LoanAmount)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ApplicationDate)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Product)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TermsQty)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TermsQty)
+                                            </td>
+                                            <td>@ViewBag.LoanStatus</td>
+                                            <td>
+
+
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.LAno }, new { @class = "btn btn-info" }) &nbsp;
+                                                @Html.ActionLink("Details", "Details", new { id = item.LAno }, new { @class = "btn btn-info" }) &nbsp;
+                                                @*@Html.ActionLink("Delete", "Delete", new { id = item.LAno }, new { @class = "btn btn-info" })*@
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="~/Js/datatable-basic.init.js"></script>
+
+

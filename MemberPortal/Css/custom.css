@@ -1,0 +1,64 @@
+﻿/*Banner Bg Set*/
+
+.banner-bg-3 {
+    background: url('../Img/bg/banner/contact.jpg');
+}
+
+.banner-bg-10 {
+    background: url('../Img/bg/banner/profile.jpg');
+}
+
+.banner-bg-15 {
+    background: url('../Img/bg/banner/loancalc.jpg');
+}
+
+.banner-bg-5 {
+    background-image: url('../Img/bg/banner/calc.jpg');
+}
+
+.bg-wabe1::after {
+    background: rgba(0, 0, 0, 0) url("../Img/bg/banner/chart.png") repeat scroll center center / cover;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.slider-bg-one1 {
+    background-image: url('../Img/bg/banner/mainLogin1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-bg-two2 {
+    background-image: url('../Img/news/natccopartylist.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-bg-three3 {
+    background-image: url('../Img/slider/Nec-Cubao-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-12 {
+    background: url('../Img/slider/carousel3.jpg');
+}
+
+
+.footer-weve1::after {
+    background: rgba(0, 0, 0, 0) url("../Img/bg/banner/footer.png") repeat scroll center center / cover;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

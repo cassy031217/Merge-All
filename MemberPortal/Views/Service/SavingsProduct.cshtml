@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Savings Product";
+}
+
+
+
+<link href="/Css/custom.css" rel="stylesheet" />
+
+<!-- Start Banner Area -->
+<div class="banner-area banner-bg-3 ptb-80 bg-opacity-black-50 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner">
+                    <h2>Savings Product</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start Main Content Wrapper -->
+<div class="main-content-wrapper">
+    <div class="clearfix"></div>
+    <!-- Start Address section -->
+    <div class="content-section-area ptb-80 white-bg text-center">
+        <div class="container">
+            <div class="row">
+                <div class="main-heading-content text-center">
+                    <h2>Savings <span>Product</span></h2>
+                    <p>Our savings products provide convenience in savings, managing, monitoring finances and growing your funds.</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="team-wrapper">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <a class="team-image-hover" href="@Url.Action("RegularSaving", "Service")"><img class="img-responsive" src="~/Img/product/regular.jpg" alt="team-thumb"></a>
+                            </div>
+                            <div class="team-details">
+                                <a href="@Url.Action("RegularSaving", "Service")"><h3>Regular Savings</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <a class="team-image-hover" href="@Url.Action("KiddieSaving", "Service")">
+                                    <img class="img-responsive" src="~/Img/product/kiddie.jpg" alt="team-thumb">
+                                </a>
+                            </div>
+                            <div class="team-details">
+                                <a href="@Url.Action("KiddieSaving", "Service")"><h3>Kiddie Savings</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <a class="team-image-hover" href="@Url.Action("ShareCapitalSaving", "Service")"><img class="img-responsive" src="~/Img/product/sc.jpg" alt="team-thumb"></a>
+                            </div>
+                            <div class="team-details">
+                                <a href="@Url.Action("ShareCapitalSaving", "Service")"><h3>Share Capital</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <a class="team-image-hover" href="@Url.Action("TDSaving", "Service")"><img class="img-responsive" src="~/Img/product/td.jpg" alt="team-thumb"></a>
+                            </div>
+                            <div class="team-details">
+                                <a href="@Url.Action("TDSaving", "Service")"><h3>Time Deposit</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

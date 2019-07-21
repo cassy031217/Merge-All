@@ -1,0 +1,58 @@
+﻿@using MemberPortal.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@*<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+    <form class="login100-form validate-form">*@
+        
+    <div class="row">
+            <div class="col-12">
+                <br />
+                @using (Html.BeginForm("Login", "MemberAccount", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input autocomplete="off" type="text" required="" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" data-val="true" data-val-required="Username is Required." id="Username" name="Username">
+                        &nbsp; @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input autocomplete="off" class="form-control form-control-lg" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="Password is Required." id="Password" name="Password" type="password" placeholder="Password" />
+                        &nbsp; @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group text-center">
+                        <div class="col-xs-12 pb-3">
+                            <button class="btn btn-block btn-lg btn-info" type="submit">Log In</button>
+                        </div>
+                    </div>
+
+                }
+                <div class="form-group mb-0 mt-2">
+                    <div class="col-sm-12 text-center">
+                        Don't have an account? <a href="@Url.Action("Register", "MemberAccount")" class="text-info ml-1"><b>Sign Up</b></a>
+                        | <a href="@Url.Action("Index", "Home")" class="text-success ml-1 "><b>Cancel</b></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    @*</form>
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,119 @@
+﻿@model MemberPortal.Models.LoanApplication
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<link href="~/Css/StyleSheet1.css" rel="stylesheet" />
+<div id="main-wrapper">
+    <div class="page-content container-fluid">
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                                    <div class="main-heading-content text-left text-info">
+                                        <h1>Online Loan Application</h1>
+
+                                        <p>Fill-up the application form and submit the required documents.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-20">
+                                <nav>
+                                    <ol class="cd-multi-steps text-bottom count">
+                                        <li class="current"><a href="#">Application</a></li>
+                                        <li class=""><a href="#">Requirements</a></li>
+                                        <li class=""><em>Verification</em></li>
+                                        <li><em>Evaluation</em></li>
+                                        <li><em>Approval</em></li>
+                                        <li><em>Released</em></li>
+                                    </ol>
+                                </nav>
+                            </div>
+
+                            <br />
+                            <br />
+
+
+                            <div class="row">
+                                <div class="contact-main-wrapper clearfix">
+                                    <div class="contact-form-wrapper mb-10">
+                                        <div class="contact-form">
+
+                                            @using (Html.BeginForm())
+                                            {
+                                                @Html.AntiForgeryToken()
+
+                                                <div class="form-horizontal">
+                                                    <h4>LoanApplication</h4>
+                                                    <hr />
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                                    <div class="form-group">
+                                                        <label>ApplicationDate:</label>
+                                                        <text>@DateTime.Now</text>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>MemberCode:</label><label class="text-info"><strong>&nbsp;&nbsp;@MemberPortal.Models.Global.Cifkey &nbsp; </strong></label>
+                                                        <br />
+                                                        <label>Name:</label><label class="text-info"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@MemberPortal.Models.Global.AccountName &nbsp;</strong></label>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>AppliedAmount:</label>
+
+                                                        @Html.EditorFor(model => model.AppliedAmount, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.AppliedAmount, "", new { @class = "text-danger" })
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label>Product:</label>
+                                                        @Html.DropDownList("Product", ViewBag.ProductList as SelectList, "Select Product", new { @class = "form-control", style = "width:350px" })
+
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>TermsQty:</label>
+                                                        @Html.EditorFor(model => model.TermsQty, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.ValidationMessageFor(model => model.TermsQty, "", new { @class = "text-danger" })
+
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <div class="col-md-offset-2 col-md-10">
+                                                            <input type="submit" value="Proceed" class="btn btn-outline-primary  btn-lg" />&nbsp;
+                                                            <input type="button" class="btn btn-outline-primary btn-lg" value="Go Back" onclick="@("window.location.href='" + @Url.Action("Index", "LoanApplications") + "'");" />
+                                                            <br /><br /><br />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

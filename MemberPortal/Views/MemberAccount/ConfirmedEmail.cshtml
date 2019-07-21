@@ -1,0 +1,57 @@
+﻿@model  MemberPortal.Models.ActivateAccount
+@{
+    ViewBag.Title = "Confirmed Email";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    //Layout = "~/Views/Shared/_Register.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <div class="text-left">
+            Please check your Email Inbox, and Input the username and 4 digit access code in the field.
+        </div>
+        <br />
+        @using (Html.BeginForm("ConfirmedEmail", "MemberAccount", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+            <div class="form-group row">
+                <div class="col-12 ">
+                    <label for="state">Access Code <b class="text-danger">*</b></label>
+                    @Html.TextBoxFor(m => m.Accesscode, new { @class = "form-control", autocomplete = "off" })
+                    <small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.Accesscode, "", new { @class = "text-danger" })</i></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 ">
+                    <label for="state">User Name <b class="text-danger">*</b></label>
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control", autocomplete = "off" })
+                    <small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })</i></small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 ">
+                    <label for="state">Password <b class="text-danger">*</b></label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", autocomplete = "off" })
+                    <small class="form-text text-dark"><i>@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })</i></small>
+                </div>
+            </div>
+            <hr />
+            <button class="btn btn-block btn-lg btn-info " type="submit">Activate Account</button>
+            <div class="form-group mb-0 mt-2 ">
+                <div class="col-sm-12 text-center ">
+                    Already have an account? <a href="@Url.Action("Login", "MemberAccount")" class="text-info ml-1 "><b>Sign In</b></a>
+                    | <a href="@Url.Action("Index", "Home")" class="text-muted ml-1 "><b>Home</b></a>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

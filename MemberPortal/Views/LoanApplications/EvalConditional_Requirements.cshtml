@@ -1,0 +1,207 @@
+﻿@model MemberPortal.Models.LoanApplication
+
+@{
+    ViewBag.Title = "EvalConditional_Requirements";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<link href="~/Css/StyleSheet1.css" rel="stylesheet" />
+<div id="main-wrapper">
+    <div class="page-content container-fluid">
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                                    <div class="main-heading-content text-left text-info">
+                                        <h1>Online Loan Application</h1>
+
+                                        <p>Fill-up the application form and submit the required documents.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-20">
+                                <nav>
+                                    <ol class="cd-multi-steps text-bottom count">
+                                        <li class="visited"><a href="#">Application</a></li>
+                                        <li class="visited"><a href="#">Requirements</a></li>
+                                        <li class="visited"><em>Verification</em></li>
+                                        <li class="current"><em>Evaluation</em></li>
+                                        <li><em>Approval</em></li>
+                                        <li><em>Released</em></li>
+                                    </ol>
+                                </nav>
+                            </div>
+
+                            <br />
+                            <br />
+
+
+                            <div class="row">
+                                <div class="contact-main-wrapper clearfix">
+                                    <div class="contact-form-wrapper mb-10">
+                                        <div class="contact-form">
+
+                                            @using (Html.BeginForm("EvalConditional_Requirements", "LoanApplications", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+
+                                                <div class="form-horizontal">
+                                                    <h4>Requirements Verification</h4>
+                                                    <hr />
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    @Html.HiddenFor(model => model.LAno)
+
+
+                                                    <h2>Upload Files</h2>
+                                                    <p>
+                                                        Once the membebr signed the application, Scan and upload the document.
+                                                        Upload here the list of requirements listed below.
+                                                        We will review all documents submitted that may takes 1 to 3 working days
+                                                    </p>
+                                                    <br />
+                                                    <div class="row">
+                                                        <div class="panel panel-info">
+                                                            <div class="panel-heading">Loan Application Form</div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn" type="file" class="upload" name="uploadBtn" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="ApplicationFormPath" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <hr />
+                                                    <div class="row">
+                                                        <div class="panel panel-info">
+                                                            <div class="panel-heading">Loan Requirements</div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn1" type="file" class="upload" name="uploadBtn1" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="File1Path" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn2" type="file" class="upload" name="uploadBtn2" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="File2Path" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn3" type="file" class="upload" name="uploadBtn3" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="File3Path" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn4" type="file" class="upload" name="uploadBtn4" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="File4Path" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                                <div class="input-group">
+                                                                    <div class="fileUpload input-group-addon  btn btn-primary ">
+                                                                        <span>Upload</span>
+                                                                        <input id="uploadBtn5" type="file" class="upload" name="uploadBtn5" />
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <input id="File5Path" placeholder="Choose File" class="form-control" readonly />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <br />
+                                                    <hr />
+                                                    <div class="text-center">
+                                                        <input type="submit" value="Proceed" class="btn btn-outline-primary btn-lg" />&nbsp;
+                                                        <input type="button" class="btn btn-outline-primary btn-lg" value="Back" onclick="@("window.location.href='" + @Url.Action("Index", "LoanApplications") + "'");" />
+                                                        <br />
+                                                        <br />
+                                                        <br />
+
+                                                    </div>
+                                                    <br />
+
+
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("uploadBtn").onchange = function () {
+        document.getElementById("ApplicationFormPath").value = this.value;
+    };
+
+    document.getElementById("uploadBtn1").onchange = function () {
+        document.getElementById("File1Path").value = this.value;
+    };
+
+    document.getElementById("uploadBtn2").onchange = function () {
+        document.getElementById("File2Path").value = this.value;
+    };
+
+    document.getElementById("uploadBtn3").onchange = function () {
+        document.getElementById("File3Path").value = this.value;
+    };
+    document.getElementById("uploadBtn4").onchange = function () {
+        document.getElementById("File4Path").value = this.value;
+    };
+
+    document.getElementById("uploadBtn5").onchange = function () {
+        document.getElementById("File5Path").value = this.value;
+    };
+</script>

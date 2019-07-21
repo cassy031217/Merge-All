@@ -1,0 +1,37 @@
+﻿.slider-bg-five {
+    background-image: url('../Img/slider/Ga_Partylist.JPG');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-bg-six {
+    background-image: url('../Img/slider/GA_Assembly.JPG');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-bg-10 {
+    background-image: url('../Img/slider/online.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-bg-eight {
+    background-image: url('../Img/slider/Nec-Cubao-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-bg-30 {
+    background-image: url('../Img/slider/registration.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bg-14 {
+    background: url('../Img/slider/GA.jpg');
+}

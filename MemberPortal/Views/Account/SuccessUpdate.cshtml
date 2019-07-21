@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Update SuccessFully";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <h2><img src="~/Img/checked.png" width="42" height="42" /> @ViewBag.Title.</h2>
+            <div class="col-md-12">
+                Click this button to see Profile Information. <a class="btn btn-outline-primary" href="@Url.Action("AcctProfile", "Main")">See Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,107 @@
+﻿
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Start Header Section -->
+<header>
+   @Html.Partial("_SubHeader")
+    <div class="header-area header-style-multipage gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-sm-1">
+                     <h2><img src="~/Img/bg/banner/NEC Logo.png" width="100" height="80" /></h2>
+                    @*<div class="logo">
+                        <a href="index.html"><h2><span>NEC</span> MPC</h2></a>
+                    </div>*@
+                </div>
+                <div class="col-md-11 col-sm-9 main-menu-wrapper">
+                    <div class="multipage-wrapper">
+                        <ul class="main-menu">
+                            <li class="@(ViewBag.Active == "Home" ? "active" : "")">
+                                @Html.ActionLink("Home", "Index", "Home")
+                            </li>
+                            <li class="@(ViewBag.Active == "News" ? "active" : "")">
+                                @Html.ActionLink("News", "Index", "News")
+                            </li>
+                            <li class="@(ViewBag.Active == "About" ? "active" : "")">
+                                @Html.ActionLink("About Us", "About", "Home")
+                            </li>
+
+                            <li>
+                                <a href="#">Product/Services <i class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown col-md-12">
+                                    <li>@Html.ActionLink("Loan Products", "LoanProduct", "Service")</li>
+                                    <li>@Html.ActionLink("Savings Products", "SavingsProduct", "Service")</li>
+                                    <li><a href="#">KAYA Enrollment </a></li>
+                                </ul>
+                            </li>
+                            <li class="@(ViewBag.Active == "Membership" ? "active" : "")">
+                                <a href="#">Membership <i class="fa fa-caret-down"></i></a>
+                                <ul>
+                                    <li class="@(ViewBag.Active == "Membership" ? "active" : "")">
+                                        @Html.ActionLink("Online Membership", "Index", "Membership")
+                                    </li>
+                                    <li class="@(ViewBag.Active == "ViewStatus" ? "active" : "")">
+                                        @Html.ActionLink("View Application Status", "ViewStatus", "Membership")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="@(ViewBag.Active == "Contact" ? "active" : "")">
+                                @Html.ActionLink("Contact Us", "Contact", "Home")
+                            </li>
+                            <li>
+                                <form action="@Url.Action("Login", "MemberAccount")">
+                                    <button type="submit" class="btn btn-warning"><i class="fa fa-user-circle-o"></i> ONLINE BANKING LOGIN</button>
+                                </form>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-area">
+                    <div class="mobile-menu">
+                        <ul>
+                            <li class="@(ViewBag.Active == "Home" ? "active" : "")">
+                                @Html.ActionLink("Home", "Index", "Home")
+                            </li>
+                            <li class="@(ViewBag.Active == "News" ? "active" : "")">
+                                @Html.ActionLink("News", "News", "Home")
+                            </li>
+                            <li class="@(ViewBag.Active == "About" ? "active" : "")">
+                                @Html.ActionLink("About Us", "About", "Home")
+                            </li>
+                            <li>
+                                <a href="#">Product/Services <i class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown col-md-12">
+                                    <li>@Html.ActionLink("Loan Products", "LoanProduct", "Service")</li>
+                                    <li>@Html.ActionLink("Savings Products", "SavingsProduct", "Service")</li>
+                                    <li><a href="#">KAYA Enrollment </a></li>
+                                </ul>
+                            </li>
+                            <li class="@(ViewBag.Active == "Membership" ? "active" : "")">
+                                <a href="#">Membership <i class="fa fa-caret-down"></i></a>
+                                <ul>
+                                    <li class="@(ViewBag.Active == "Membership" ? "active" : "")">
+                                        @Html.ActionLink("Online Membership", "Index", "Membership")
+                                    </li>
+                                    <li class="@(ViewBag.Active == "ViewStatus" ? "active" : "")">
+                                        @Html.ActionLink("View Application Status", "ViewStatus", "Membership")
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="@(ViewBag.Active == "Contact" ? "active" : "")">
+                                @Html.ActionLink("Contact Us", "Contact", "Home")
+                            </li>
+                            <li>
+                                <form action="@Url.Action("LoanCalc", "Home")">
+                                    <button type="submit" class="btn btn-warning"><i class="fa fa-user-circle-o"></i> ONLINE BANKING LOGIN</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Section -->

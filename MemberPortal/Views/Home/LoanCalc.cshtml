@@ -1,0 +1,133 @@
+﻿@using MemberPortal.Models
+@model LoanCalcalculator
+@{
+    ViewBag.Title = "Loan Calculator";
+    ViewBag.Active = "Calc";
+}
+
+<link href="~/Css/custom.css" rel="stylesheet" />
+<link href="~/Css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="banner-area banner-bg-3 ptb-80 bg-opacity-black-50 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner">
+                    <h2>Loan Calculator</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section-area ptb-80 white-bg bg-wabe1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="calculate-left">
+                    <h2><span class="icon fl-puppets-maths27"></span> Compute loan package</h2>
+                    <div class="calculate-wrappwr">
+                        <div class="section-one">
+                            <levels>Choose Loan Type</levels>
+                            <select class="option-area" name="loanName" id="loanName">
+                                <option value="1">Personal Loan</option>
+                                <option value="2">Salary Loan</option>
+                                <option value="3">Prov. Diminishing- Car Loan</option>
+                                <option value="4">Micro Loan</option>
+                                <option value="5">Educational Loan</option>
+                            </select>
+                        </div>
+                        <div class="section-one">
+                            <levels>Loan Terms</levels>
+                            <select class="option-area" name="terms" id="terms">
+                                <option value="6">6 months</option>
+                                <option value="12">12 months</option>
+                                <option value="18">18 months</option>
+                                <option value="24">24 months</option>
+                                <option value="30">30 months</option>
+                                <option value="36">36 months</option>
+                                <option value="48">48 months</option>
+                                <option value="60">60 months</option>
+                            </select>
+                        </div>
+                        <div class="section-one">
+                            <levels>Amount</levels>
+                            <input class="loginbox-form" type="text" placeholder="" name="amount" id="amount">
+                        </div>
+                        <div class="section-one">
+                            
+
+                            @*@using (Html.BeginForm("GetLoanCalc", "home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                <button class="button active login-button mt-10" type="submit">&nbsp;&nbsp; Compute Loan &nbsp;&nbsp;</button>
+                            }*@
+
+                            @*<a class="button active login-button mt-10 " autocomplete="off" href="@Url.Action("GetLoanCalc", "home")">&nbsp;&nbsp; Compute Loan &nbsp;&nbsp;</a>*@
+                            
+    
+                            <input id="btnCalculate" name="btnCalculate" type="button" value="Compute Loan" class="btn btn-warning" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="calculate-right">
+                    @*<img src="~/Img/client/loancalc.png" alt="" />*@
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 order-md-3">
+            <div class="form-group">
+                <label for="state" class="text-danger"><b>Important Notice</b></label>
+                <ul class="widget-link">
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>All amount quoted are in Philippine Peso.</b></li>
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>The computation only serve as guide and illustration purposes only.</b></li>
+                    <li><i aria-hidden="true" class="fa fa-long-arrow-right"></i> <b>Contact your Coop for your actual loan computation.</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+@*</div>*@
+    <div class="content-section-area ptb-10 white-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-sm-10" id="products">
+                    @*load the table*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    $('#btnCalculate').click(function ajaxCall() {
+        //debugger;
+        var termsVal = $('#terms').val();
+        var amountVal = $('#amount').val();
+
+        $.ajax({
+            url: '../Home/GetComputedLoans',
+            contentType: 'application/html; charset=utf-8',
+            data: { termsData: termsVal, amountData: amountVal },
+            type: 'GET',
+            dataType: 'html'
+
+        })
+        .success(function (result) {
+            $('#products').html(result);
+        })
+        .error(function (xhr, status) {
+            alert(status);
+        })
+
+        $("#products").show();
+
+    });
+    $('#btnClear').click(function ajaxCall() {
+        $("#products").hide();
+    });
+
+</script>
+}

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Registration Error";
+    //Layout = "~/Views/Shared/_Register.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <br />
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <hr />
+        <div class="text-center">
+            Sorry, You dont have an Existing Account.
+        </div>
+        <div class="text-center">
+            For more info, Please ask for your Dealer Assistance.
+        </div>
+        <hr />
+        <div class="form-group mb-0 mt-2 ">
+            Don't have an account?
+            <br />
+            <div class="col-sm-12 text-center ">
+                 <a href="@Url.Action("Register", "MemberAccount")" class="btn btn-info "><b>Register</b></a>
+                | <a href="@Url.Action("Index", "Home")" class="btn btn-success"><b>Cancel</b></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,30 @@
+﻿.slider-bg-nine {
+    background-image: url('../Img/slider/BrigadaEskwela.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slider-bg-Ten {
+    background-image: url('../Img/slider/Pic1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-bg-11 {
+    background-image: url('../Img/slider/2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slider-bg-23 {
+    background-image: url('../Img/slider/registration.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
